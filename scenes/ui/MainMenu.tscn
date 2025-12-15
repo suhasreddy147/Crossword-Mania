@@ -1,0 +1,176 @@
+[gd_scene load_steps=8 format=3 uid="uid://cq82xnrggir26"]
+
+[ext_resource type="FontFile" uid="uid://dygo4q36aqey" path="res://fonts/ChunkFive-Bold.otf" id="1_6jbdy"]
+[ext_resource type="FontFile" uid="uid://dcwqda8nydymj" path="res://fonts/ChunkFive-Regular.otf" id="1_vjtqc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rmrm"]
+bg_color = Color(0.0035191663, 0.003519169, 0.0035191642, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_size = 6
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjtqc"]
+bg_color = Color(0.0018410675, 0.0018410685, 0.0018410663, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jbdy"]
+bg_color = Color(0.00566115, 0.0056611523, 0.005661145, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwbf0"]
+bg_color = Color(0.01773239, 0.017732395, 0.017732374, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ysvc"]
+bg_color = Color(0.00566115, 0.0056611523, 0.005661145, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="MainMenuControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainLayoutMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="MainLayout" type="VBoxContainer" parent="MainLayoutMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MainLayoutMarginContainer/MainLayout"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6jbdy")
+theme_override_font_sizes/font_size = 56
+text = "CROSSWORD MANIA"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MainLayoutMarginContainer/MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MainLayoutMarginContainer/MainLayout"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NewGameMarginContainer" type="MarginContainer" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="NewGameButton" type="Button" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer/NewGameMarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_vjtqc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rmrm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0rmrm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0rmrm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0rmrm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0rmrm")
+text = "New Game"
+
+[node name="ContinueMarginContainer" type="MarginContainer" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="ContinueButton" type="Button" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer/ContinueMarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_vjtqc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rmrm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vjtqc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vjtqc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vjtqc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vjtqc")
+text = "Continue"
+
+[node name="SettingsMarginContainer" type="MarginContainer" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="SettingsButton" type="Button" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer/SettingsMarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_vjtqc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rmrm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6jbdy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6jbdy")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6jbdy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6jbdy")
+text = "Settings"
+
+[node name="StoreMarginContainer" type="MarginContainer" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="StoreButton" type="Button" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer/StoreMarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_vjtqc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rmrm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iwbf0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iwbf0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_iwbf0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iwbf0")
+text = "Store"
+
+[node name="DailyChallengeMarginContainer" type="MarginContainer" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="DailyChallengeButton" type="Button" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer/DailyChallengeMarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_vjtqc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rmrm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ysvc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ysvc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2ysvc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2ysvc")
+text = "Daily Challenge"
