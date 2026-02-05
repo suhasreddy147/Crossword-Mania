@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ds83kyatmeuf5"]
+
+[ext_resource type="FontFile" uid="uid://dcwqda8nydymj" path="res://fonts/ChunkFive-Regular.otf" id="1_d114g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d114g"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fl2b"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+
+[resource]
+default_font = ExtResource("1_d114g")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.6, 0.6, 0.6, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_d114g")
+Button/styles/normal = SubResource("StyleBoxFlat_d114g")
+Button/styles/pressed = SubResource("StyleBoxFlat_5fl2b")

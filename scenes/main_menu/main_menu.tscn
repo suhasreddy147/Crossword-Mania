@@ -1,0 +1,269 @@
+[gd_scene load_steps=17 format=3 uid="uid://cq82xnrggir26"]
+
+[ext_resource type="Script" uid="uid://bqrob60foxcfe" path="res://scenes/main_menu/main_menu.gd" id="1_ob46e"]
+[ext_resource type="Texture2D" uid="uid://dknf8i1x8rpbd" path="res://assets/icons/settings.png" id="2_5seab"]
+[ext_resource type="FontFile" uid="uid://dygo4q36aqey" path="res://fonts/ChunkFive-Bold.otf" id="2_uqeha"]
+[ext_resource type="Texture2D" uid="uid://bjkh1d8gxe7k1" path="res://assets/icons/settings_pressed.png" id="3_4xg86"]
+[ext_resource type="Texture2D" uid="uid://b4ttqlfanbygm" path="res://assets/icons/store.png" id="4_thkx5"]
+[ext_resource type="Texture2D" uid="uid://bgfr5ro736mi0" path="res://assets/icons/store_pressed.png" id="5_x2yjq"]
+[ext_resource type="Theme" uid="uid://ds83kyatmeuf5" path="res://themes/outlined_button_theme.tres" id="7_5seab"]
+[ext_resource type="Texture2D" uid="uid://vwbt53wkckpw" path="res://assets/icons/help.png" id="8_rrgl4"]
+[ext_resource type="Texture2D" uid="uid://vp37v8bktvw8" path="res://assets/icons/help_pressed.png" id="9_dn3lk"]
+[ext_resource type="Texture2D" uid="uid://cotjai62uuyju" path="res://assets/icons/ranks.png" id="10_4ujhu"]
+[ext_resource type="Texture2D" uid="uid://biicewwjctlej" path="res://assets/icons/ranks_pressed.png" id="11_vnpsp"]
+[ext_resource type="Texture2D" uid="uid://ckq60jy4b2juc" path="res://assets/icons/profile.png" id="12_a1gy5"]
+[ext_resource type="Texture2D" uid="uid://dhqxqla47k1di" path="res://assets/icons/profile_pressed.png" id="13_bq5lc"]
+
+[sub_resource type="FontFile" id="FontFile_xac7c"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_0m3cs"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_i7nm7"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="MainMenuControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ob46e")
+
+[node name="BackgroundRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MainLayoutMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="MainLayout" type="VBoxContainer" parent="MainLayoutMarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="TopBarContainer" type="HBoxContainer" parent="MainLayoutMarginContainer/MainLayout"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="SettingsContainer" type="MarginContainer" parent="MainLayoutMarginContainer/MainLayout/TopBarContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="SettingsButton" type="TextureButton" parent="MainLayoutMarginContainer/MainLayout/TopBarContainer/SettingsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("2_5seab")
+texture_pressed = ExtResource("3_4xg86")
+stretch_mode = 5
+
+[node name="TopBarSpacer" type="Control" parent="MainLayoutMarginContainer/MainLayout/TopBarContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="StoreContainer" type="MarginContainer" parent="MainLayoutMarginContainer/MainLayout/TopBarContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="StoreButton" type="TextureButton" parent="MainLayoutMarginContainer/MainLayout/TopBarContainer/StoreContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("4_thkx5")
+texture_pressed = ExtResource("5_x2yjq")
+stretch_mode = 5
+
+[node name="MainMenuSpacerTop" type="Control" parent="MainLayoutMarginContainer/MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TitleMarginContainer" type="MarginContainer" parent="MainLayoutMarginContainer/MainLayout"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 256
+
+[node name="TitleContainer" type="VBoxContainer" parent="MainLayoutMarginContainer/MainLayout/TitleMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MainLayoutMarginContainer/MainLayout/TitleMarginContainer/TitleContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_uqeha")
+theme_override_font_sizes/font_size = 56
+text = "CROSSWORD MANIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DividerContainer" type="CenterContainer" parent="MainLayoutMarginContainer/MainLayout/TitleMarginContainer/TitleContainer"]
+layout_mode = 2
+
+[node name="Divider" type="ColorRect" parent="MainLayoutMarginContainer/MainLayout/TitleMarginContainer/TitleContainer/DividerContainer"]
+custom_minimum_size = Vector2(80, 3)
+layout_mode = 2
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MainLayoutMarginContainer/MainLayout"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("7_5seab")
+text = "NEW GAME"
+
+[node name="ContinueButton" type="Button" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("7_5seab")
+text = "CONTINUE
+"
+
+[node name="ContinueInfoLabel" type="Label" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.6)
+text = "LEVEL 42 • 2 HOURS AGO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DailyChallengeButton" type="Button" parent="MainLayoutMarginContainer/MainLayout/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("7_5seab")
+text = "DAILY CHALLENGE
+"
+
+[node name="MainMenuSpacerBottom" type="Control" parent="MainLayoutMarginContainer/MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BottomNavContainer" type="VBoxContainer" parent="MainLayoutMarginContainer/MainLayout"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Divider" type="ColorRect" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer"]
+custom_minimum_size = Vector2(220, 3)
+layout_mode = 2
+
+[node name="BottomNavBarContainer" type="HBoxContainer" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="HelpContentContainer" type="VBoxContainer" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer/BottomNavBarContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="HelpIconButton" type="TextureButton" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer/BottomNavBarContainer/HelpContentContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("8_rrgl4")
+texture_pressed = ExtResource("9_dn3lk")
+stretch_mode = 5
+
+[node name="HelpLabel" type="Label" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer/BottomNavBarContainer/HelpContentContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_xac7c")
+text = "HELP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RanksContentContainer" type="VBoxContainer" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer/BottomNavBarContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="RanksIconButton" type="TextureButton" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer/BottomNavBarContainer/RanksContentContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("10_4ujhu")
+texture_pressed = ExtResource("11_vnpsp")
+stretch_mode = 5
+
+[node name="RanksLabel" type="Label" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer/BottomNavBarContainer/RanksContentContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_0m3cs")
+text = "RANKS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProfileContentContainer" type="VBoxContainer" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer/BottomNavBarContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="ProfileIconButton" type="TextureButton" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer/BottomNavBarContainer/ProfileContentContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("12_a1gy5")
+texture_pressed = ExtResource("13_bq5lc")
+stretch_mode = 5
+
+[node name="ProfileLabel" type="Label" parent="MainLayoutMarginContainer/MainLayout/BottomNavContainer/BottomNavBarContainer/ProfileContentContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_i7nm7")
+text = "PROFILE"
+horizontal_alignment = 1
+vertical_alignment = 1
