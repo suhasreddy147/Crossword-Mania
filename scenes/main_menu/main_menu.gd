@@ -1,6 +1,6 @@
 extends Control
 
-var has_active_game: bool = true
+var has_active_game: bool = false
 
 @onready var continue_button: Button = $MainLayoutMarginContainer/MainLayout/ButtonsContainer/ContinueButton
 
