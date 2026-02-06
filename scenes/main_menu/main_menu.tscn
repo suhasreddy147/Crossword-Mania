@@ -267,3 +267,6 @@ theme_override_fonts/font = SubResource("FontFile_i7nm7")
 text = "PROFILE"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="MainLayoutMarginContainer/MainLayout/TopBarContainer/SettingsContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainLayoutMarginContainer/MainLayout/TopBarContainer/StoreContainer/StoreButton" to="." method="_on_store_button_pressed"]
