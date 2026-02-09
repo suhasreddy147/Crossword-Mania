@@ -1,0 +1,107 @@
+{
+  "id": "puzzle_001",
+  "language": "en",
+  "title": "First Steps",
+  "author": "Crossword Mania",
+  "difficulty": "easy",
+
+  "grid": {
+	"rows": 5,
+	"cols": 5,
+	"cells": [
+	  "HELLO",
+	  "E#A#S",
+	  "L#P#E",
+	  "L#O#N",
+      "OCEAN"
+	]
+  },
+
+  "clues": {
+	"across": [
+	  {
+		"number": 1,
+		"row": 0,
+		"col": 0,
+		"length": 5,
+		"clue": "A common greeting",
+		"answer": "HELLO"
+	  },
+	  {
+		"number": 3,
+		"row": 1,
+		"col": 2,
+		"length": 1,
+		"clue": "First letter of the alphabet",
+		"answer": "A"
+	  },
+	  {
+		"number": 4,
+		"row": 1,
+		"col": 4,
+		"length": 1,
+		"clue": "Plural letter after R",
+		"answer": "S"
+	  },
+	  {
+		"number": 5,
+		"row": 2,
+		"col": 2,
+		"length": 1,
+		"clue": "Sixteenth letter of the alphabet",
+		"answer": "P"
+	  },
+	  {
+		"number": 6,
+		"row": 2,
+		"col": 4,
+		"length": 1,
+		"clue": "Fifth letter of the alphabet",
+		"answer": "E"
+	  },
+	  {
+		"number": 7,
+		"row": 3,
+		"col": 2,
+		"length": 1,
+		"clue": "Round letter",
+		"answer": "O"
+	  },
+	  {
+		"number": 8,
+		"row": 3,
+		"col": 4,
+		"length": 1,
+		"clue": "Fourteenth letter of the alphabet",
+		"answer": "N"
+	  },
+	  {
+		"number": 9,
+		"row": 4,
+		"col": 0,
+		"length": 5,
+		"clue": "A vast body of salt water",
+		"answer": "OCEAN"
+	  }
+	],
+
+	"down": [
+	  {
+		"number": 1,
+		"row": 0,
+		"col": 0,
+		"length": 5,
+		"clue": "Opposite of goodbye",
+		"answer": "HELLO"
+	  },
+	  {
+		"number": 2,
+		"row": 0,
+		"col": 2,
+		"length": 5,
+		"clue": "To help or support",
+		"answer": "LAPOE"
+	  }
+	]
+  }
+}
