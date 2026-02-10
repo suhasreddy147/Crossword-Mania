@@ -9,15 +9,7 @@ var has_active_game: bool = false
 
 func _ready() -> void:
 	update_continue_button_state()
-	var puzzle = PuzzleLoader.load_puzzle("res://data/puzzles/puzzle_0001/en.json")
-	print(PuzzleLoader)
-	if puzzle.is_empty():
-		print('Puzzle failed to load')
-	else:
-		print('Puzzle loaded successfully')
-		print(puzzle['title'])
-
-
+	
 func update_continue_button_state() -> void:
 	continue_button.disabled = not has_active_game
 	continue_info_label.visible = has_active_game

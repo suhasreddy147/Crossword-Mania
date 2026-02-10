@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxqegwceh65e7"]
+
+[ext_resource type="Script" uid="uid://cqoses3xgnh8j" path="res://scenes/crossword_grid/cell.gd" id="1_ve71x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve71x"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.26666668, 0.26666668, 0.26666668, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Cell" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ve71x")
+script = ExtResource("1_ve71x")
+
+[node name="Letter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
