@@ -1,0 +1,135 @@
+{
+  "id": "puzzle_002",
+  "language": "en",
+  "title": "Bigger Steps",
+  "author": "Crossword Mania",
+  "difficulty": "easy",
+
+  "grid": {
+	"rows": 9,
+	"cols": 9,
+	"cells": [
+	  "SUN#MOON#",
+	  "A#E#I#O#U",
+	  "TREE#ROCK",
+	  "#RIVER#LA",
+	  "CLOUD#SKY",
+	  "ND#MOUN#T",
+	  "PLANT#SEA",
+	  "#U#O#E#A#",
+      "STAR#NITE"
+	]
+  },
+
+  "clues": {
+	"across": [
+	  {
+		"number": 1,
+		"row": 0,
+		"col": 0,
+		"length": 3,
+		"clue": "The center of our solar system",
+		"answer": "SUN"
+	  },
+	  {
+		"number": 4,
+		"row": 0,
+		"col": 4,
+		"length": 4,
+		"clue": "Earth’s natural satellite",
+		"answer": "MOON"
+	  },
+	  {
+		"number": 6,
+		"row": 2,
+		"col": 0,
+		"length": 4,
+		"clue": "A tall plant with a trunk",
+		"answer": "TREE"
+	  },
+	  {
+		"number": 7,
+		"row": 2,
+		"col": 5,
+		"length": 4,
+		"clue": "A large stone",
+		"answer": "ROCK"
+	  },
+	  {
+		"number": 9,
+		"row": 4,
+		"col": 0,
+		"length": 5,
+		"clue": "A visible mass of water droplets in the air",
+		"answer": "CLOUD"
+	  },
+	  {
+		"number": 10,
+		"row": 4,
+		"col": 6,
+		"length": 3,
+		"clue": "Where birds fly",
+		"answer": "SKY"
+	  },
+	  {
+		"number": 12,
+		"row": 6,
+		"col": 0,
+		"length": 5,
+		"clue": "A living organism like a flower or tree",
+		"answer": "PLANT"
+	  },
+	  {
+		"number": 13,
+		"row": 6,
+		"col": 6,
+		"length": 3,
+		"clue": "A large body of salt water",
+		"answer": "SEA"
+	  },
+	  {
+		"number": 15,
+		"row": 8,
+		"col": 0,
+		"length": 4,
+		"clue": "A glowing object in space",
+		"answer": "STAR"
+	  },
+	  {
+		"number": 16,
+		"row": 8,
+		"col": 5,
+		"length": 4,
+		"clue": "Opposite of day",
+		"answer": "NITE"
+	  }
+	],
+
+	"down": [
+	  {
+		"number": 1,
+		"row": 0,
+		"col": 0,
+		"length": 5,
+		"clue": "A bright object in the sky",
+		"answer": "SUNRA"
+	  },
+	  {
+		"number": 2,
+		"row": 0,
+		"col": 2,
+		"length": 5,
+		"clue": "Grows from the ground",
+		"answer": "NEERL"
+	  },
+	  {
+		"number": 3,
+		"row": 0,
+		"col": 6,
+		"length": 5,
+		"clue": "Found in the sky at night",
+		"answer": "MSSKT"
+	  }
+	]
+  }
+}

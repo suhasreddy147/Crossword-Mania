@@ -13,7 +13,7 @@ Extensible for future features (packs, daily challenges, multiple languages)
 2. File Location & Naming
 res://data/puzzles/
  └── puzzle_001/
-      ├── en.json
+	  ├── en.json
 One folder per puzzle ID
 One JSON file per language
 Language files use ISO 639-1 codes (e.g. en, es, fr)
@@ -48,10 +48,10 @@ _comment					string										Human-readable notes (ignored by game)
   "rows": 5,
   "cols": 5,
   "cells": [
-    "HELLO",
-    "E#A#S",
-    "L#P#E",
-    "L#O#N",
+	"HELLO",
+	"E#A#S",
+	"L#P#E",
+	"L#O#N",
     "OCEAN"
   ]
 }
