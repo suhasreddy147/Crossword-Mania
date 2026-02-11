@@ -32,8 +32,6 @@ func build_from_puzzle(puzzle: Dictionary):
 		(viewport_size.x - grid_width) * 0.5,
 		(viewport_size.y - grid_height) * 0.5
 	)
-		
-	var index := 0
 	for row in range(rows):
 		for col in range(cols):
 			var character : String = cells[row][col]
@@ -57,10 +55,6 @@ func build_from_puzzle(puzzle: Dictionary):
 			
 			#CONNECT SELECTION SIGNAL
 			cell.cell_pressed.connect(_on_cell_pressed)
-			
-			#temporary code for testing to be removed later
-			cell.set_debug_text(str(index))
-			index += 1
 
 func _get_cell_size() -> Vector2:
 	var temp := cell_scene.instantiate() as Cell
