@@ -6,6 +6,8 @@ var cell_scene: PackedScene = preload(
 
 var cellSize : int
 
+var selected_cell: Cell = null
+
 func build_from_puzzle(puzzle: Dictionary):
 	var grid_data = puzzle["grid"]
 	var rows: int = grid_data["rows"]
@@ -53,6 +55,10 @@ func build_from_puzzle(puzzle: Dictionary):
 			else:
 				cell.set_black(false)
 			
+			#CONNECT SELECTION SIGNAL
+			cell.cell_pressed.connect(_on_cell_pressed)
+			
+			#temporary code for testing to be removed later
 			cell.set_debug_text(str(index))
 			index += 1
 
@@ -62,3 +68,15 @@ func _get_cell_size() -> Vector2:
 	var size := temp.get_cell_size()
 	temp.queue_free()
 	return size
+	
+func _on_cell_pressed(cell: Cell) -> void:
+	if cell.is_black:
+		return
+
+	# Deselect previous
+	if selected_cell != null:
+		selected_cell.set_selected(false)
+
+	# Select new
+	selected_cell = cell
+	selected_cell.set_selected(true)
