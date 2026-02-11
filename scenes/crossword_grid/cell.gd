@@ -9,7 +9,11 @@ var is_black: bool = false
 var is_selected: bool = false
 
 func _ready() -> void:
-	size = custom_minimum_size
+	# Ensure fixed-size control (no anchor stretching)
+	set_anchors_preset(Control.PRESET_TOP_LEFT)
+	
+	# Defer size assignment so Godot doesn't override it
+	set_deferred("size", custom_minimum_size)
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	
 func _gui_input(event: InputEvent) -> void:
