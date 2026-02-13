@@ -6,7 +6,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Load a test puzzle
-	var puzzle = PuzzleLoader.load_puzzle("res://data/puzzles/puzzle_0001/en.json")
+	var puzzle = PuzzleLoader.load_puzzle("res://data/puzzles/puzzle_0002/en.json")
 	crossword_grid.build_from_puzzle(puzzle)
 
 	# Wire keyboard to grid
