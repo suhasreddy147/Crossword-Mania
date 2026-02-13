@@ -8,6 +8,9 @@ signal cell_pressed(cell: Cell)
 var is_black: bool = false
 var is_selected: bool = false
 
+var is_word_highlighted := false
+var is_cursor := false
+
 func _ready() -> void:
 	# Ensure fixed-size control (no anchor stretching)
 	set_anchors_preset(Control.PRESET_TOP_LEFT)
@@ -56,3 +59,29 @@ func set_selected(selected: bool) -> void:
 		style.bg_color = Color.WHITE
 		letter_label.modulate = Color.BLACK
 	add_theme_stylebox_override("panel", style)
+
+func _update_style():
+	var style := get_theme_stylebox("panel").duplicate() as StyleBoxFlat
+
+	if is_black:
+		style.bg_color = Color.BLACK
+		letter_label.modulate = Color.WHITE
+	elif is_cursor:
+		style.bg_color = Color(0.95, 0.8, 0.2) # stronger yellow (cursor)
+		letter_label.modulate = Color.BLACK
+	elif is_word_highlighted:
+		style.bg_color = Color(0.9, 0.9, 0.6) # soft highlight (word)
+		letter_label.modulate = Color.BLACK
+	else:
+		style.bg_color = Color.WHITE
+		letter_label.modulate = Color.BLACK
+
+	add_theme_stylebox_override("panel", style)
+	
+func set_word_highlighted(value: bool) -> void:
+	is_word_highlighted = value
+	_update_style()
+
+func set_cursor_highlighted(value: bool) -> void:
+	is_cursor = value
+	_update_style()
