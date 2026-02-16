@@ -2,8 +2,9 @@ extends Panel
 class_name Cell
 
 signal cell_pressed(cell: Cell)
-
+	
 @onready var letter_label: Label = $Letter
+@onready var number_label: Label = $Number
 
 var is_black: bool = false
 var is_selected: bool = false
@@ -38,7 +39,12 @@ func set_black(is_black_val: bool):
 	else:
 		style.bg_color = Color.WHITE
 		letter_label.modulate = Color.BLACK
-	
+	# WHITE BORDER
+	style.border_width_left = 2
+	style.border_width_right = 2
+	style.border_width_top = 2
+	style.border_width_bottom = 2
+	style.border_color = Color('3a3a3a')
 	add_theme_stylebox_override("panel", style)
 
 func set_debug_text(t: String):
@@ -58,6 +64,12 @@ func set_selected(selected: bool) -> void:
 	else:
 		style.bg_color = Color.WHITE
 		letter_label.modulate = Color.BLACK
+	## WHITE BORDER
+	style.border_width_left = 2
+	style.border_width_right = 2
+	style.border_width_top = 2
+	style.border_width_bottom = 2
+	style.border_color = Color('3a3a3a')
 	add_theme_stylebox_override("panel", style)
 
 func _update_style():
@@ -85,3 +97,11 @@ func set_word_highlighted(value: bool) -> void:
 func set_cursor_highlighted(value: bool) -> void:
 	is_cursor = value
 	_update_style()
+	
+func set_number(number: int) -> void:
+	if number > 0:
+		number_label.text = str(number)
+		number_label.visible = true
+		number_label.modulate = Color.BLACK
+	else:
+		number_label.visible = false

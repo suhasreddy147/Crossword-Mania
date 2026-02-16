@@ -8,64 +8,77 @@ var cell_scene: PackedScene = preload(
 	"res://scenes/crossword_grid/Cell.tscn"
 )
 
+@onready var clue_panel = get_parent().get_node("../CluePanel")
+
+var puzzle_clues : Dictionary = {}
+var puzzle_grid_data : Dictionary = {}
+
 var cellSize : int
 
 var selected_cell: Cell = null
 
 var grid_cells: Array = [] # 2D array [row][col]
 
+@onready var grid_container: GridContainer = $GridContainer
+
+func _ready() -> void:
+	size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+
 func build_from_puzzle(puzzle: Dictionary):
-	var grid_data = puzzle["grid"]
-	var rows: int = grid_data["rows"]
-	var cols: int = grid_data["cols"]
-	var cells: Array = grid_data["cells"]
+	puzzle_clues = puzzle["clues"]
+	puzzle_grid_data = puzzle["grid"]
+
+	var rows: int = puzzle_grid_data["rows"]
+	var cols: int = puzzle_grid_data["cols"]
+	var cells: Array = puzzle_grid_data["cells"]
 	
+	clue_panel.populate_clues(puzzle_clues)
+
+	# Ensure cell size is initialized
 	var cell_size := _get_cell_size()
 	@warning_ignore("narrowing_conversion")
 	cellSize = cell_size.x
-	
+
 	# Clear old cells
-	for child in get_children():
+	for child in grid_container.get_children():
 		child.queue_free()
 
 	grid_cells.clear()
 
-	# Calculate grid size
-	var grid_width := cols * cellSize
-	var grid_height := rows * cellSize
-	
-	# Center grid manually
-	var viewport_size := get_viewport_rect().size
-	var origin := Vector2(
-		(viewport_size.x - grid_width) * 0.5,
-		(viewport_size.y - grid_height) * 0.5
-	)
-	
+	# Configure GridContainer
+	grid_container.columns = cols
+	grid_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	grid_container.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
 	for row in range(rows):
 		var row_cells := []
+
 		for col in range(cols):
-			var character : String = cells[row][col]
+			var character: String = cells[row][col]
 			var cell := cell_scene.instantiate() as Cell
 			if cell == null:
 				push_error("Cell scene root is not of type Cell")
 				return
-			
-			add_child(cell)
-			cell.position = origin + Vector2(
-				col * cellSize,
-				row * cellSize
-			)
 
+			# Let container handle layout
+			grid_container.add_child(cell)
+
+			# Make every cell square
 			cell.custom_minimum_size = Vector2(cellSize, cellSize)
-			
-			if character == '#':
+			cell.size_flags_horizontal = Control.SIZE_FILL
+			cell.size_flags_vertical = Control.SIZE_FILL
+
+			if character == "#":
 				cell.set_black(true)
 			else:
 				cell.set_black(false)
-			
-			#CONNECT SELECTION SIGNAL
+
 			cell.cell_pressed.connect(_on_cell_pressed)
 			row_cells.append(cell)
+			var clue_start_number := _get_clue_start_number(row, col)
+			cell.set_number(clue_start_number)
 		grid_cells.append(row_cells)
 
 func _get_cell_size() -> Vector2:
@@ -137,6 +150,7 @@ func _update_active_word():
 		cell.set_word_highlighted(true)
 	# Highlight the tapped cell more strongly
 	selected_cell.set_cursor_highlighted(true)
+	_update_clue_panel(row, col)
 
 func _clear_all_highlights():
 	for row in grid_cells:
@@ -192,3 +206,60 @@ func _has_down_word(row: int, col: int) -> bool:
 	if row < grid_cells.size() - 1 and not grid_cells[row + 1][col].is_black:
 		return true
 	return false
+
+func _update_clue_panel(row: int, col: int):
+
+	var clue_number := _get_clue_number(row, col)
+
+	if clue_number == -1:
+		return
+
+	var direction_key := "across" if active_direction == Direction.ACROSS else "down"
+
+	if not puzzle_clues.has(direction_key):
+		return
+
+	var clue_list : Array = puzzle_clues[direction_key]
+
+	for clue in clue_list:
+		if clue["number"] == clue_number:
+			clue_panel.show_clue(direction_key.capitalize(), clue_number)
+			return
+
+func _get_clue_number(row: int, col: int) -> int:
+
+	var number := 1
+
+	for r in range(grid_cells.size()):
+		for c in range(grid_cells[r].size()):
+
+			if grid_cells[r][c].is_black:
+				continue
+
+			var start_across := false
+			var start_down := false
+
+			if (c == 0 or grid_cells[r][c - 1].is_black) and (c < grid_cells[r].size() - 1 and not grid_cells[r][c + 1].is_black):
+				start_across = true
+
+			if (r == 0 or grid_cells[r - 1][c].is_black) and (r < grid_cells.size() - 1 and not grid_cells[r + 1][c].is_black):
+				start_down = true
+
+			if start_across or start_down:
+				if r == row and c == col:
+					return number
+				number += 1
+	return -1
+	
+func _get_clue_start_number(row: int, col: int) -> int:
+	# Check across clues
+	for clue in puzzle_clues["across"]:
+		if clue["row"] == row and clue["col"] == col:
+			return clue["number"]
+
+	# Check down clues
+	for clue in puzzle_clues["down"]:
+		if clue["row"] == row and clue["col"] == col:
+			return clue["number"]
+
+	return 0

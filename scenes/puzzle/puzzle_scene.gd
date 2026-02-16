@@ -1,7 +1,7 @@
 extends Control
 
-@onready var crossword_grid = $CrosswordGrid
-@onready var keyboard = $VirtualKeyboard
+@onready var crossword_grid = $VBoxContainer/CenterContainer/CrosswordGrid
+@onready var keyboard = $VBoxContainer/VirtualKeyboard
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

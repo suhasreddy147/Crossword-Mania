@@ -5,100 +5,100 @@
   "author": "Crossword Mania",
   "difficulty": "easy",
   "grid": {
-    "rows": 5,
-    "cols": 5,
-    "cells": [
-      "LAMP#",
-      "IDOL#",
-      "LOVER",
-      "TRIBE",
+	"rows": 5,
+	"cols": 5,
+	"cells": [
+	  "LAMP#",
+	  "IDOL#",
+	  "LOVER",
+	  "TRIBE",
       "#NEED"
-    ]
+	]
   },
   "clues": {
-    "across": [
-      {
-        "number": 1,
-        "row": 0,
-        "col": 0,
-        "length": 4,
-        "clue": "A source of light",
-        "answer": "LAMP"
-      },
-      {
-        "number": 2,
-        "row": 1,
-        "col": 0,
-        "length": 4,
-        "clue": "An object of worship",
-        "answer": "IDOL"
-      },
-      {
-        "number": 3,
-        "row": 2,
-        "col": 0,
-        "length": 5,
-        "clue": "A romantic partner",
-        "answer": "LOVER"
-      },
-      {
-        "number": 4,
-        "row": 3,
-        "col": 0,
-        "length": 5,
-        "clue": "A social group or clan",
-        "answer": "TRIBE"
-      },
-      {
-        "number": 5,
-        "row": 4,
-        "col": 1,
-        "length": 4,
-        "clue": "To require something",
-        "answer": "NEED"
-      }
-    ],
-    "down": [
-      {
-        "number": 6,
-        "row": 0,
-        "col": 0,
-        "length": 4,
-        "clue": "A gentle musical rhythm",
-        "answer": "LILT"
-      },
-      {
-        "number": 7,
-        "row": 0,
-        "col": 1,
-        "length": 5,
-        "clue": "To decorate or enhance",
-        "answer": "ADORN"
-      },
-      {
-        "number": 8,
-        "row": 0,
-        "col": 2,
-        "length": 5,
-        "clue": "A motion picture",
-        "answer": "MOVIE"
-      },
-      {
-        "number": 9,
-        "row": 0,
-        "col": 3,
-        "length": 5,
-        "clue": "A common person",
-        "answer": "PLEBE"
-      },
-      {
-        "number": 10,
-        "row": 2,
-        "col": 4,
-        "length": 3,
-        "clue": "The color of fire trucks",
-        "answer": "RED"
-      }
-    ]
+	"across": [
+	  {
+		"number": 1,
+		"row": 0,
+		"col": 0,
+		"length": 4,
+		"clue": "A source of light",
+		"answer": "LAMP"
+	  },
+	  {
+		"number": 2,
+		"row": 1,
+		"col": 0,
+		"length": 4,
+		"clue": "An object of worship",
+		"answer": "IDOL"
+	  },
+	  {
+		"number": 3,
+		"row": 2,
+		"col": 0,
+		"length": 5,
+		"clue": "A romantic partner",
+		"answer": "LOVER"
+	  },
+	  {
+		"number": 4,
+		"row": 3,
+		"col": 0,
+		"length": 5,
+		"clue": "A social group or clan",
+		"answer": "TRIBE"
+	  },
+	  {
+		"number": 5,
+		"row": 4,
+		"col": 1,
+		"length": 4,
+		"clue": "To require something",
+		"answer": "NEED"
+	  }
+	],
+	"down": [
+	  {
+		"number": 6,
+		"row": 0,
+		"col": 0,
+		"length": 4,
+		"clue": "A gentle musical rhythm",
+		"answer": "LILT"
+	  },
+	  {
+		"number": 7,
+		"row": 0,
+		"col": 1,
+		"length": 5,
+		"clue": "To decorate or enhance",
+		"answer": "ADORN"
+	  },
+	  {
+		"number": 8,
+		"row": 0,
+		"col": 2,
+		"length": 5,
+		"clue": "A motion picture",
+		"answer": "MOVIE"
+	  },
+	  {
+		"number": 9,
+		"row": 0,
+		"col": 3,
+		"length": 5,
+		"clue": "A common person",
+		"answer": "PLEBE"
+	  },
+	  {
+		"number": 10,
+		"row": 2,
+		"col": 4,
+		"length": 3,
+		"clue": "The color of fire trucks",
+		"answer": "RED"
+	  }
+	]
   }
 }
