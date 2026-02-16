@@ -62,7 +62,7 @@
 				"answer": "LEAF"
 			},
 			{
-				"number": 10,
+				"number": 11,
 				"row": 6,
 				"col": 1,
 				"length": 6,
@@ -115,9 +115,57 @@
 				"number": 2,
 				"row": 0,
 				"col": 4,
+				"length": 4,
+				"clue": "Calm",
+				"answer": "TAME"
+			},
+			{
+				"number": 4,
+				"row": 0,
+				"col": 7,
+				"length": 3,
+				"clue": "I have",
+				"answer": "IVE"
+			},
+			{
+				"number": 5,
+				"row": 2,
+				"col": 2,
 				"length": 5,
-				"clue": "Simple musical theme",
-				"answer": "TUNE?"
+				"clue": "Last _____ effort",
+				"answer": "DITCH"
+			},
+			{
+				"number": 6,
+				"row": 2,
+				"col": 6,
+				"length": 5,
+				"clue": "Close your eyes and _______",
+				"answer": "SLEEP"
+			},
+			{
+				"number": 9,
+				"row": 4,
+				"col": 8,
+				"length": 5,
+				"clue": "Picture holder",
+				"answer": "FRAME"
+			},
+			{
+				"number": 10,
+				"row": 5,
+				"col": 4,
+				"length": 4,
+				"clue": "Make musical sounds with your mouth",
+				"answer": "SING"
+			},
+			{
+				"number": 11,
+				"row": 6,
+				"col": 1,
+				"length": 3,
+				"clue": "Tell",
+				"answer": "SAY"
 			}
 		]
 	}
