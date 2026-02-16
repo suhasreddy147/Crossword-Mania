@@ -1,124 +1,124 @@
 {
-    "id": "puzzle_0002",
-    "language": "en",
-    "title": "Bigger Steps",
-    "author": "Crossword Mania",
-    "difficulty": "easy",
-    "grid": {
-        "rows": 9,
-        "cols": 9,
-        "cells": [
-            "START#WIN",
-            "K###A##V#",
-            "I#DEMISE#",
-            "L#I#E#L##",
-            "LATE#LEAF",
-            "##C#S#E#R",
-            "#SHRIMP#A",
-            "#A#ONE#AM",
+	"id": "puzzle_0002",
+	"language": "en",
+	"title": "Bigger Steps",
+	"author": "Crossword Mania",
+	"difficulty": "easy",
+	"grid": {
+		"rows": 9,
+		"cols": 9,
+		"cells": [
+			"START#WIN",
+			"K###A##V#",
+			"I#DEMISE#",
+			"L#I#E#L##",
+			"LATE#LEAF",
+			"##C#S#E#R",
+			"#SHRIMP#A",
+			"#A#ONE#AM",
             "EYE#GRATE"
-        ]
-    },
-    "clues": {
-        "across": [
-            {
-                "number": 1,
-                "row": 0,
-                "col": 0,
-                "length": 5,
-                "clue": "Begin",
-                "answer": "START"
-            },
-            {
-                "number": 3,
-                "row": 0,
-                "col": 6,
-                "length": 3,
-                "clue": "Victory",
-                "answer": "WIN"
-            },
-            {
-                "number": 5,
-                "row": 2,
-                "col": 2,
-                "length": 6,
-                "clue": "Death or end",
-                "answer": "DEMISE"
-            },
-            {
-                "number": 7,
-                "row": 4,
-                "col": 0,
-                "length": 4,
-                "clue": "Not early",
-                "answer": "LATE"
-            },
-            {
-                "number": 8,
-                "row": 4,
-                "col": 5,
-                "length": 4,
-                "clue": "Tree part",
-                "answer": "LEAF"
-            },
-            {
-                "number": 10,
-                "row": 6,
-                "col": 1,
-                "length": 6,
-                "clue": "Small seafood",
-                "answer": "SHRIMP"
-            },
-            {
-                "number": 12,
-                "row": 7,
-                "col": 3,
-                "length": 3,
-                "clue": "Single unit",
-                "answer": "ONE"
-            },
-            {
-                "number": 13,
-                "row": 7,
-                "col": 7,
-                "length": 2,
-                "clue": "Morning indicator (abbr.)",
-                "answer": "AM"
-            },
-            {
-                "number": 14,
-                "row": 8,
-                "col": 0,
-                "length": 3,
-                "clue": "Organ of sight",
-                "answer": "EYE"
-            },
-            {
-                "number": 15,
-                "row": 8,
-                "col": 4,
-                "length": 5,
-                "clue": "Shred finely",
-                "answer": "GRATE"
-            }
-        ],
-        "down": [
-            {
-                "number": 1,
-                "row": 0,
-                "col": 0,
-                "length": 5,
-                "clue": "Capable or competent",
-                "answer": "SKILL"
-            },
-            {
-                "number": 2,
-                "row": 0,
-                "col": 4,
-                "length": 5,
-                "clue": "Simple musical theme",
-                "answer": "TUNE?"
-            }
-        ]
-    }
+		]
+	},
+	"clues": {
+		"across": [
+			{
+				"number": 1,
+				"row": 0,
+				"col": 0,
+				"length": 5,
+				"clue": "Begin",
+				"answer": "START"
+			},
+			{
+				"number": 3,
+				"row": 0,
+				"col": 6,
+				"length": 3,
+				"clue": "Victory",
+				"answer": "WIN"
+			},
+			{
+				"number": 5,
+				"row": 2,
+				"col": 2,
+				"length": 6,
+				"clue": "Death or end",
+				"answer": "DEMISE"
+			},
+			{
+				"number": 7,
+				"row": 4,
+				"col": 0,
+				"length": 4,
+				"clue": "Not early",
+				"answer": "LATE"
+			},
+			{
+				"number": 8,
+				"row": 4,
+				"col": 5,
+				"length": 4,
+				"clue": "Tree part",
+				"answer": "LEAF"
+			},
+			{
+				"number": 10,
+				"row": 6,
+				"col": 1,
+				"length": 6,
+				"clue": "Small seafood",
+				"answer": "SHRIMP"
+			},
+			{
+				"number": 12,
+				"row": 7,
+				"col": 3,
+				"length": 3,
+				"clue": "Single unit",
+				"answer": "ONE"
+			},
+			{
+				"number": 13,
+				"row": 7,
+				"col": 7,
+				"length": 2,
+				"clue": "Morning indicator (abbr.)",
+				"answer": "AM"
+			},
+			{
+				"number": 14,
+				"row": 8,
+				"col": 0,
+				"length": 3,
+				"clue": "Organ of sight",
+				"answer": "EYE"
+			},
+			{
+				"number": 15,
+				"row": 8,
+				"col": 4,
+				"length": 5,
+				"clue": "Shred finely",
+				"answer": "GRATE"
+			}
+		],
+		"down": [
+			{
+				"number": 1,
+				"row": 0,
+				"col": 0,
+				"length": 5,
+				"clue": "Capable or competent",
+				"answer": "SKILL"
+			},
+			{
+				"number": 2,
+				"row": 0,
+				"col": 4,
+				"length": 5,
+				"clue": "Simple musical theme",
+				"answer": "TUNE?"
+			}
+		]
+	}
 }
