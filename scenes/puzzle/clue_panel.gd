@@ -4,6 +4,8 @@ class_name CluePanel
 @onready var across_list = $MarginContainer/VBoxContainer/AcrossScrollContainer/AcrossList
 @onready var down_list = $MarginContainer/VBoxContainer/DownScrollContainer/DownList
 
+signal clue_selected(row: int, col: int, direction: String)
+
 var current_direction: String = ""
 var current_number: int = -1
 
@@ -31,19 +33,38 @@ func populate_clues(clues: Dictionary) -> void:
 	_clear_list(down_list)
 
 	for clue in clues["across"]:
-		_add_clue_label(across_list, clue)
+		_add_clue_label(across_list, clue, "across")
 
 	for clue in clues["down"]:
-		_add_clue_label(down_list, clue)
+		_add_clue_label(down_list, clue, "down")
 
 
-func _add_clue_label(container: VBoxContainer, clue: Dictionary):
-	var label := Label.new()
-	label.text = str(int(clue["number"])) + ". " + clue["clue"]
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD
-	label.set_meta("clue_number", clue["number"])
-	label.add_theme_font_size_override("font_size", 20)
-	container.add_child(label)
+func _add_clue_label(container: VBoxContainer, clue: Dictionary, direction: String):
+	var btn := Button.new()
+	btn.text = str(int(clue["number"])) + ". " + clue["clue"]
+	btn.autowrap_mode = TextServer.AUTOWRAP_WORD
+	btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	btn.focus_mode = Control.FOCUS_NONE
+	# Store metadata
+	btn.set_meta("clue_number", int(clue["number"]))
+	btn.set_meta("row", clue["row"])
+	btn.set_meta("col", clue["col"])
+	btn.set_meta("direction", direction)
+	
+	btn.add_theme_font_size_override("font_size", 20)
+	
+	# Detect tap
+	btn.gui_input.connect(func(event):
+		if event is InputEventMouseButton and event.pressed:
+			emit_signal(
+				"clue_selected",
+				btn.get_meta("row"),
+				btn.get_meta("col"),
+				btn.get_meta("direction")
+			)
+	)
+	
+	container.add_child(btn)
 
 func _clear_list(container: VBoxContainer):
 	for child in container.get_children():

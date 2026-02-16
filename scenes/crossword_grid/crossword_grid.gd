@@ -24,7 +24,7 @@ var grid_cells: Array = [] # 2D array [row][col]
 func _ready() -> void:
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	size_flags_vertical = Control.SIZE_EXPAND_FILL
-
+	clue_panel.clue_selected.connect(_on_clue_selected)
 
 func build_from_puzzle(puzzle: Dictionary):
 	puzzle_clues = puzzle["clues"]
@@ -146,11 +146,13 @@ func _update_active_word():
 	else:
 		word_cells = _collect_down(row, col)
 
+	var start_pos = _find_cell_position(word_cells[0])
+
 	for cell in word_cells:
 		cell.set_word_highlighted(true)
 	# Highlight the tapped cell more strongly
 	selected_cell.set_cursor_highlighted(true)
-	_update_clue_panel(row, col)
+	_update_clue_panel(start_pos.x, start_pos.y)
 
 func _clear_all_highlights():
 	for row in grid_cells:
@@ -209,7 +211,7 @@ func _has_down_word(row: int, col: int) -> bool:
 
 func _update_clue_panel(row: int, col: int):
 
-	var clue_number := _get_clue_number(row, col)
+	var clue_number := _get_clue_start_number(row, col)
 
 	if clue_number == -1:
 		return
@@ -263,3 +265,13 @@ func _get_clue_start_number(row: int, col: int) -> int:
 			return clue["number"]
 
 	return 0
+
+func _on_clue_selected(row: int, col:int, direction:String):
+	
+	#Update direction
+	active_direction = (Direction.ACROSS if direction == "across" else Direction.DOWN)
+	
+	#Select first cell of word
+	selected_cell = grid_cells[row][col]
+	
+	_update_active_word()
