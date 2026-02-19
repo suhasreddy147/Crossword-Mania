@@ -4,6 +4,9 @@ class_name CluePanel
 @onready var across_list = $MarginContainer/VBoxContainer/AcrossScrollContainer/AcrossList
 @onready var down_list = $MarginContainer/VBoxContainer/DownScrollContainer/DownList
 
+@onready var across_scroll_container: ScrollContainer = $MarginContainer/VBoxContainer/AcrossScrollContainer
+@onready var down_scroll_container: ScrollContainer = $MarginContainer/VBoxContainer/DownScrollContainer
+
 signal clue_selected(row: int, col: int, direction: String)
 
 var current_direction: String = ""
@@ -13,7 +16,7 @@ func _ready():
 	var h = get_viewport_rect().size.y
 	custom_minimum_size = Vector2(0, h * 0.25) # 25% of screen height
 
-
+##This function is used to highlight and scroll to the selected clue
 func show_clue(direction: String, number: int) -> void:
 	current_direction = direction
 	current_number = number
@@ -21,10 +24,12 @@ func show_clue(direction: String, number: int) -> void:
 	_clear_highlights()
 
 	var target_list = across_list if direction == "Across" else down_list
+	var target_scroll_container = across_scroll_container if direction == "Across" else down_scroll_container
 	
 	for child in target_list.get_children():
 		if child.has_meta("clue_number") and child.get_meta("clue_number") == number:
 			child.add_theme_color_override("font_color", Color(1, 0.85, 0.3)) # highlight
+			_scroll_to_clue(target_scroll_container, child)
 			break
 
 
@@ -75,3 +80,22 @@ func _clear_highlights():
 	for list in [across_list, down_list]:
 		for child in list.get_children():
 			child.remove_theme_color_override("font_color")
+
+##This funciton is used to scroll to the particular button in the respective scroll container.
+func _scroll_to_clue(scroll: ScrollContainer, target: Control):
+
+	await get_tree().process_frame
+
+	var container := target.get_parent()
+
+	var target_y = target.position.y
+	var target_height = target.size.y
+	var view_height = scroll.size.y
+
+	var desired_scroll = target_y - (view_height * 0.5) + (target_height * 0.5)
+	desired_scroll = clamp(desired_scroll, 0, container.size.y - view_height)
+
+	var tween: Tween = create_tween()
+	tween.tween_property(scroll, "scroll_vertical", desired_scroll, 0.25) \
+		.set_trans(Tween.TRANS_SINE) \
+		.set_ease(Tween.EASE_OUT)
